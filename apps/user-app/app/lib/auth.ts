@@ -20,6 +20,7 @@ export const authOptions = {
                 }
             });
 
+            // password validation in the right way 
             if (existingUser) {
                 const passwordValidation = await bcrypt.compare(credentials.password, existingUser.password);
                 if (passwordValidation) {
@@ -32,6 +33,7 @@ export const authOptions = {
                 return null;
             }
 
+            // if user was not created in the database then create the user
             try {
                 const user = await db.user.create({
                     data: {
