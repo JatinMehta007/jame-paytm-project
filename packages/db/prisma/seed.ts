@@ -3,7 +3,6 @@ import bcrypt from "bcrypt";
 const prisma = new PrismaClient()
 
 async function main() {
-    // upsert = either insert or if the entry was already inserted then update that
   const alice = await prisma.user.upsert({
     where: { number: '1111111111' },
     update: {},
