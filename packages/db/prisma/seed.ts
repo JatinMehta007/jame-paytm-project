@@ -27,6 +27,7 @@ async function main() {
       },
     },
   })
+  
   const bob = await prisma.user.upsert({
     where: { number: '2222222222' },
     update: {},

@@ -1,12 +1,21 @@
+
 import prisma from "@repo/db/client";
-import { AddMoney } from "../../../components/AddMoneyCard"; 
-import { BalanceCard } from "../../../components/BalanceCard"; 
-import { OnRampTransactions } from "../../../components/OnRampTransactions"; 
+import { AddMoney } from "../../../components/AddMoneyCard";
+import { BalanceCard } from "../../../components/BalanceCard";
+import { OnRampTransactions } from "../../../components/OnRampTransactions";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../../lib/auth";
 
 async function getBalance() {
     const session = await getServerSession(authOptions);
+    console.log("Session Data :", session);
+    if(!session?.user?.id){
+        console.error("User ID not found in session");
+        return{
+            amount:0,
+            locked:0
+        };
+    }
     const balance = await prisma.balance.findFirst({
         where: {
             userId: Number(session?.user?.id)
@@ -17,6 +26,7 @@ async function getBalance() {
         locked: balance?.locked || 0
     }
 }
+
 
 async function getOnRampTransactions() {
     const session = await getServerSession(authOptions);
@@ -32,6 +42,8 @@ async function getOnRampTransactions() {
         provider: t.provider
     }))
 }
+
+
 
 export default async function() {
     const balance = await getBalance();

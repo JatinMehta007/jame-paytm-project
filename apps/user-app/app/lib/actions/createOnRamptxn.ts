@@ -5,12 +5,12 @@ import { authOptions } from "../auth";
 import prisma from "@repo/db/client";
 
 
-export async function createOnRampTransactions(amount : number, provider:string){
+export async function createOnRampTransactions(provider:string, amount : number ){
 
     //  this is how you get the current user send a request to the server
      const session = await getServerSession(authOptions);
-     const token = Math.random().toString() ;
-     const userId = session.user.id;
+     const token = Math.random().toString();
+     const userId = session.user.id; 
      if(!userId){
          return {
             message : "user not logged in"
@@ -18,8 +18,8 @@ export async function createOnRampTransactions(amount : number, provider:string)
      }
     await prisma.onRampTransaction.create({
         data:{
-            userId : Number(userId) ,
-            amount:amount,
+            userId : Number(userId),
+            amount:amount * 100,
             status : "Processing",
             startTime : new Date(),
             provider,

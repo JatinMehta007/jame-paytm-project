@@ -8,6 +8,7 @@ app.post("/hdfcWebhook", async (req, res) => {
     //TODO: Add zod validation here?
     //TODO: HDFC bank should ideally send us a secret so we know this is sent by them
     // TODO : Check if this onRamptxn is processing or not
+    
     const paymentInformation: {
         token: string;
         userId: string;
@@ -17,6 +18,8 @@ app.post("/hdfcWebhook", async (req, res) => {
         userId: req.body.user_identifier,
         amount: req.body.amount
     };
+    
+    console.log("the amount is :", paymentInformation);
 
     try {
         await db.$transaction([
@@ -28,6 +31,7 @@ app.post("/hdfcWebhook", async (req, res) => {
                     amount: {
                         // You can also get this from your DB
                         increment: Number(paymentInformation.amount)
+                        
                     }
                 }
             }),
@@ -50,7 +54,6 @@ app.post("/hdfcWebhook", async (req, res) => {
             message: "Error while processing webhook"
         })
     }
-
 })
 
 app.listen(3003);
