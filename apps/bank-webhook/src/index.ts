@@ -31,10 +31,10 @@ app.post("/hdfcWebhook", async (req, res) => {
                     amount: {
                         // You can also get this from your DB
                         increment: Number(paymentInformation.amount)
-                        
+                            }
                     }
-                }
             }),
+            
             db.onRampTransaction.updateMany({
                 where: {
                     token: paymentInformation.token

@@ -8,7 +8,9 @@ import { authOptions } from "../../lib/auth";
 
 async function getBalance() {
     const session = await getServerSession(authOptions);
+    
     console.log("Session Data :", session);
+
     if(!session?.user?.id){
         console.error("User ID not found in session");
         return{
@@ -21,11 +23,13 @@ async function getBalance() {
             userId: Number(session?.user?.id)
         }
     });
+    console.log("the amount is ", balance);
     return {
         amount: balance?.amount || 0,
         locked: balance?.locked || 0
     }
 }
+
 
 
 async function getOnRampTransactions() {
@@ -49,6 +53,7 @@ export default async function() {
     const balance = await getBalance();
     const transactions = await getOnRampTransactions();
 
+    console.log(balance);
     return <div className="w-screen">
         <div className="text-4xl text-[#6a51a6] pt-8 mb-8 font-bold">
             Transfer
