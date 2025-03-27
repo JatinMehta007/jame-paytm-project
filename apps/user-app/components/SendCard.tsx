@@ -22,13 +22,8 @@ export function SendCard() {
                     }} />
                     <div className="pt-4 flex justify-center">
                         <Button onClick={async() => {
-                            if( await p2pTransfer(number,Number(amount) * 100)){
-
-                                alert("send successfully");
-                            } else{
-                                alert("not send");
-                            }
-                          
+                           await p2pTransfer(number,Number(amount) * 100);
+                           alert("send successfully");
                         }}>Send</Button>
                     </div>
                 </div>
