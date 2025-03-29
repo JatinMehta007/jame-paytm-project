@@ -15,7 +15,7 @@ async function getBalance() {
         console.error("User ID not found in session");
         return{
             amount:0,
-            locked:0
+            locked:0 
         };
     }
     const balance = await prisma.balance.findFirst({

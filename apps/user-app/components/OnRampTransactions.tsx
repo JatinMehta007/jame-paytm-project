@@ -18,8 +18,8 @@ export const OnRampTransactions = ({
         </Card>
     }
     return <Card title="Recent Transactions">
-        <div className="pt-2">
-            {transactions.map(t => <div className="flex justify-between">
+        <div className="pt-2 h-60 overflow-auto space-y-4 pr-3">
+            {transactions.map(t => <div className="flex justify-between border-b pb-2">
                 <div>
                     <div className="text-sm">
                         Received INR
@@ -28,7 +28,7 @@ export const OnRampTransactions = ({
                         {t.time.toDateString()}
                     </div>
                 </div>
-                <div className="flex flex-col justify-center">
+                <div className="text-right items-center flex">
                     + Rs {t.amount / 100}
                 </div>
 
