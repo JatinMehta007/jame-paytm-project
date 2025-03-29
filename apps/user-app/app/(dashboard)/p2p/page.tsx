@@ -1,5 +1,4 @@
 import { getServerSession } from "next-auth";
-
 import { SendCard } from "../../../components/SendCard";
 import { authOptions } from "../../lib/auth";
 import prisma from "@repo/db/client";
@@ -14,8 +13,8 @@ async function getP2PTransactions(){
       }
    });
    return txns.map(t=>({
-      time:t.timestamp,
-      amount: t.amount,
+      time    : t.timestamp,
+      amount  : t.amount,
    }))
 }
 
@@ -24,7 +23,7 @@ export default async function (){
    const transactions = await getP2PTransactions();
 
      return <div className=" flex pl-28">
-      <div className="text-4xl text-[#6a51a6]  mb-8 font-bold">
+      <div className="text-4xl mb-8 font-bold">
         <SendCard/>   
         
       </div>

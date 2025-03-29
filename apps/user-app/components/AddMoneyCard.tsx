@@ -36,7 +36,7 @@ export const AddMoney = () => {
           }}
         />
 
-        <div className="py-4 text-left">Bank</div>
+        <div className="py-4 text-left text-base">Bank</div>
         <Select
           onSelect={(value) => {
             setRedirectUrl(
