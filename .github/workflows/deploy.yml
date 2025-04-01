@@ -24,7 +24,7 @@ jobs:
         context: .
         file: ./docker/Dockerfile.userApp
         push: true
-        tags: jatin045/paytm:latest  # Replace with your Docker Hub username and repository
+        tags: jatin045/paytm:latest  
 
     - name: Verify Pushed Image
-      run: docker pull jatin045/paytm:latest  # Replace with your Docker Hub username and repository
+      run: docker pull jatin045/paytm:latest  
