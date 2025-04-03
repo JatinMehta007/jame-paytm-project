@@ -17,15 +17,15 @@
     "turbo": "^2.4.4"
   },
   "engines": {
-  "node": ">=20.17.0",
-  "npm": ">=10.0.0"
-},
+    "node": ">=18"
+  },
   "packageManager": "npm@10.2.4",
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
   "dependencies": {
+    "bcryptjs": "^3.0.2",
     "recoil": "^0.7.7"
   }
 }
