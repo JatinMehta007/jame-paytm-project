@@ -3,6 +3,7 @@ import bcrypt from "bcryptjs";
 const prisma = new PrismaClient()
 
 async function main() {
+  // these are the two users i create to check the updates
   const alice = await prisma.user.upsert({
     where: { number: '1111111111' },
     update: {},
@@ -10,7 +11,7 @@ async function main() {
       number: '1111111111',
       password: await bcrypt.hash('alice', 10),
       name: 'alice',
-      Balance: {
+      Balance: { 
         create: {
             amount: 20000,
             locked: 0
@@ -54,6 +55,7 @@ async function main() {
   })
   console.log({ alice, bob })
 }
+
 main()
   .then(async () => {
     await prisma.$disconnect()

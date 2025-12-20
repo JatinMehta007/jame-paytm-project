@@ -36,6 +36,8 @@ model p2pTransfer {
   toUser     User         @relation(name: "ToUserRelation", fields: [toUserId], references: [id])
 }
 
+// Records of money added from external sources (like bank or UPI)
+// Add money to their account (via OnRampTransaction)
 model OnRampTransaction {
   id        Int          @id @default(autoincrement())
   status    OnRampStatus

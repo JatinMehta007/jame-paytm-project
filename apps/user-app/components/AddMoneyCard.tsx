@@ -3,8 +3,8 @@
 import { Button } from "@repo/ui/button"; 
 import { Card } from "@repo/ui/card";
 import { useState } from "react";
-import { Select } from "@repo/ui/select";
-import { TextInput } from "@repo/ui/textinput";
+import { Select } from "../../../packages/ui/src/components/select";
+import { TextInput } from "../../../packages/ui/src/components/textinput";
 import { createOnRampTransactions } from "../app/lib/actions/createOnRamptxn";
 
 const SUPPORTED_BANKS = [

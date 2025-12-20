@@ -18,6 +18,7 @@ async function getBalance() {
             locked:0 
         };
     }
+    
     const balance = await prisma.balance.findFirst({
         where: {
             userId: Number(session?.user?.id)
