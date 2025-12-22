@@ -45,7 +45,7 @@ export const LampContainer = ({
             duration: 0.8,
             ease: "easeInOut",
           }}
-          className=" inset-auto z-30 h-20 w-36 blur-2xl -translate-y-[5.5rem]  bg-blue-800"
+          className=" inset-auto z-30 h-20 w-36 blur-3xl -translate-y-[5.5rem]  bg-neutral-50"
         ></motion.div>
 
         <motion.div
@@ -56,7 +56,7 @@ export const LampContainer = ({
             duration: 0.8,
             ease: "easeInOut",
           }}
-          className="absolute inset-auto z-50 h-20 blur-2xl bg-blue-800 w-2 -translate-y-[1.5rem] "
+          className="absolute inset-auto z-50 h-20 blur-2xl bg-neutral-50 w-2 -translate-y-[1.5rem] "
         ></motion.div>
         <motion.div
           initial={{ width: "24rem" }}
@@ -66,8 +66,9 @@ export const LampContainer = ({
             duration: 0.8,
             ease: "easeInOut",
           }}
-          className="absolute inset-auto z-50 h-20 blur-2xl bg-blue-800 w-2 translate-y-[2rem]  "
+          className="absolute inset-auto z-50 h-20 blur-3xl bg-neutral-50 w-2 translate-y-[2rem]  "
         ></motion.div>
+          <p className="text-lg text-black rotate-180 absolute ">Coming Soon</p>
         <motion.div
           initial={{ width: "28rem" }}
           whileInView={{ width: "28rem" }}
@@ -76,16 +77,15 @@ export const LampContainer = ({
             duration: 0.8,
             ease: "easeInOut",
           }}
-          className="absolute inset-auto z-50 h-20 blur-2xl bg-blue-800 w-2 translate-y-[6rem]  "
+          className="absolute inset-auto z-50 h-20 blur-2xl bg-neutral-50 w-2 translate-y-[6rem]  "
         ></motion.div>
+        <div className="absolute inset-auto  z-40 blur-2xl h-10 w-48 -translate-y-[9rem]  bg-neutral-50 "></div>
 
-        <div className="absolute inset-auto  z-40 blur-2xl h-10 w-48 -translate-y-[9rem]  bg-blue-800 "></div>
+        <div className="absolute inset-auto  z-40 blur-2xl h-10 w-40 -translate-y-[10rem]  bg-neutral-50 "></div>
 
-        <div className="absolute inset-auto  z-40 blur-2xl h-10 w-40 -translate-y-[10rem]  bg-blue-800 "></div>
+        <div className="absolute inset-auto  z-40 blur-2xl h-10 w-28 -translate-y-[11rem]  bg-neutral-50 "></div>
 
-        <div className="absolute inset-auto  z-40 blur-2xl h-10 w-28 -translate-y-[11rem]  bg-blue-800 "></div>
-
-        <div className="absolute inset-auto  z-40 blur-2xl h-10 w-16 -translate-y-[12rem]  bg-blue-800 "></div>
+        <div className="absolute inset-auto  z-40 blur-2xl h-10 w-16 -translate-y-[12rem]  bg-neutral-50 "></div>
       </div>
 
     </div>
