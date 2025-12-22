@@ -34,13 +34,12 @@ export default function LandingPage() {
 
        </div>
       </div>
-      <div className="relative ml-40 z-20 pt-20 self-start">
+
+
+      <div className="relative ml-40 z-20  self-start">
     <RotatingCard />
   </div>
-
-  {/* 2. Lamp & Text (Bottom Layer) */}
   <div className="relative ml-40 z-10 -mt-[500px] w-full flex justify-start">
-    {/* Negative left margin lamp ko screen ke bilkul edge par chipka dega */}
     <div className="-ml-[100px]">
       <LampContainer className="opacity-80">
         <motion.h1
@@ -56,6 +55,10 @@ export default function LandingPage() {
           Build lamps <br /> the right way
         </motion.h1>
       </LampContainer>
+    </div>
+    <div className="flex flex-col mt-20">
+    <p className="">Your digital card</p>
+    <p className="text-gray-600"> <span className="text-white/30">Built for a</span> borderless world</p>
     </div>
   </div>
     </div>
