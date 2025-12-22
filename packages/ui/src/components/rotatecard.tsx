@@ -22,11 +22,9 @@ export default function RotatingCard() {
       className="w-[250px] h-[400px] border-4  border-yellow-300 bg-blue-300 p-6 rounded-2xl shadow-2xl flex flex-col justify-between"
       style={{ 
         transformStyle: "preserve-3d",
-        // Background ko thoda premium look dene ke liye gradient
         background: "linear-gradient(135deg, #93c5fd 0%, #3b82f6 100%)" 
       }}
     >
-      {/* Vertical Card Content */}
       <div className="flex justify-between items-start">
         <div className="w-10 h-8 bg-yellow-400/90 rounded-md shadow-inner" />
         <p className="font-bold text-blue-900">BANK</p>
@@ -47,7 +45,6 @@ export default function RotatingCard() {
            <p className="text-sm font-bold text-blue-900">12/30</p>
         </div>
       </div>
-      {/* <img src="/logo.png" alt="asdfd" /> */}
     </div>
   );
 }
