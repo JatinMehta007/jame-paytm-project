@@ -10,7 +10,10 @@
     "./select": "./src/components/select.tsx",
     "./textinput": "./src/components/textinput.tsx",
     "./center": "./src/components/center.tsx",
-    "./landing": "./src/components/landing.tsx"
+    "./slider" : "./src/components/slider.tsx",
+    "./lamp" : "./src/components/lamp.tsx",
+    "./cardstack" : "./src/components/cardstack.tsx",
+    "./highlight":"./src/components/highlight.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
