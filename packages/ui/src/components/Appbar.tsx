@@ -16,7 +16,7 @@ export const Appbar = ({
     onSignin,
     onSignout
 }: AppbarProps) => {
-    return <div className="flex justify-between items-center border-b px-4 ">
+    return <div className="flex justify-between bg-white/10 items-center px-4 ">
         <div className="text-lg flex  justify-center  items-center">
             <img src="/images/lofo.svg" alt="Logo" className="h-[40px] "/>
             <p className="items-center flex pl-1 text-2xl  font-title text-green-600">Jame</p>
