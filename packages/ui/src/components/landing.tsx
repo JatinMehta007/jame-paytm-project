@@ -15,7 +15,7 @@ export default function LandingPage() {
       <h1 className=" font-bold font-title rounded-2xl h-24 bg-black/50  ">SEND AND SPEND</h1>
       <p className="text-green-600 rounded-2xl bg-black/60 h-24 ">MONEY WORLDWIDE</p>
       {/* <p className="bg-white/80 rounded-sm w-72 h-10 absolute"></p> */}
-      <button className="mt-6 text-2xl px-4 py-2 bg-blue-800 text-white/80 border-8 border-green-600 rounded-full hover:bg-blue-700">
+      <button className="mt-6 text-2xl px-4 py-2 bg-blue-800 text-white/80 border-8 border-green-600 rounded-full hover:bg-blue-700 ">
         Get Started
       </button>
       {/* <RotatingCard></RotatingCard> */}
@@ -58,10 +58,17 @@ export default function LandingPage() {
           Build lamps <br /> the right way
         </motion.h1>
       </LampContainer>
-    </div>
-    <div className="flex flex-col mt-20">
+</div>
+
+    <div className="flex flex-col mt-20 ">
     <p className="">Your digital card</p>
-    <p className="text-gray-600"> <span className="text-white/30">Built for a</span> borderless world</p>
+    <p className="text-gray-300"> <span className="text-white/30">Built for a</span> borderless world</p>
+    <div className="  w-32 text-center
+  rounded-full border border-white/20 px-4 py-1
+  text-xs uppercase tracking-widest text-white/60
+  backdrop-blur-md">
+  Coming Soon
+    </div>
     </div>
   </div>
 {/* FOOTER */}
