@@ -6,10 +6,10 @@ import RotatingCard from "./RotateCard";
 export function LampSection(){
     return (
         <div className=""> 
-        <div className="relative ml-40 z-20  self-start">
+        <div className="relative ml-52 z-20  self-start">
   <RotatingCard></RotatingCard>
    </div>
-    <div className="relative ml-40 z-10 -mt-[500px] w-full flex justify-start">
+    <div className="relative ml-20 z-10 -mt-[500px] w-full flex justify-start">
       <div className="-ml-[100px]">
         <LampContainer className="opacity-80">
           <motion.h1
