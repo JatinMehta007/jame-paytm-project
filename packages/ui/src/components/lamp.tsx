@@ -13,7 +13,7 @@ export const LampContainer = ({
   return (
     <div
       className={cn(
-        "relative left-0 flex h-[800px]  overflow-hidden  w-[600px] rounded-md z-0 rotate-180 ",
+        "relative left-0 flex h-[800px]  overflow-hidden  w-[700px] rounded-md z-0 rotate-180 ",
         className
       )}
     >
@@ -49,7 +49,7 @@ export const LampContainer = ({
           }}
           className="absolute inset-auto z-50 h-20 blur-3xl bg-neutral-50 w-2 translate-y-[2rem]  "
         ></motion.div>
-          <p className="text-lg text-black rotate-180 absolute ">Coming Soon</p>
+          {/* <p className="text-lg text-black rotate-180 absolute ">Coming Soon</p> */}
         <motion.div
           initial={{ width: "28rem" }}
           whileInView={{ width: "28rem" }}
