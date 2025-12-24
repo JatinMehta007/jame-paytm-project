@@ -13,7 +13,9 @@
     "./slider" : "./src/components/slider.tsx",
     "./lamp" : "./src/components/lamp.tsx",
     "./cardstack" : "./src/components/cardstack.tsx",
-    "./highlight":"./src/components/highlight.tsx"
+    "./highlight":"./src/components/highlight.tsx",
+    "./linkedinIcon":"./src/components/linkedinIcon.tsx",
+    "./githubIcon" : "./src/components/githubIcon.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
