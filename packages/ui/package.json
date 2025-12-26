@@ -15,7 +15,10 @@
     "./cardstack" : "./src/components/cardstack.tsx",
     "./highlight":"./src/components/highlight.tsx",
     "./linkedinIcon":"./src/components/linkedinIcon.tsx",
-    "./githubIcon" : "./src/components/githubIcon.tsx"
+    "./githubIcon" : "./src/components/githubIcon.tsx",
+    "./label" : "./src/components/label.tsx",
+    "./input" : "./src/components/input.tsx",
+    "./spinner" : "./src/components/spinner.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
