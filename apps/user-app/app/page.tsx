@@ -5,6 +5,7 @@ import { LandingFeatureOne } from "../components/FeatureSectionOne";
 import GlobeSection from "../components/FeatureSectionTwo";
 import { LampSection } from "../components/LampSection";
 import { Footer } from "../components/Footer";
+import { AppbarClient } from "../components/AppbarClient";
 
 
 
@@ -17,6 +18,7 @@ export default async function Page() {
   }
   return<>
   <div className="text-8xl font-title text-green-600 bg-gradient-to-b from-blue-600/90 via-blue-700 to-slate-950  overflow-x-hidden">
+  <AppbarClient />
     <LandingFeatureOne></LandingFeatureOne>
     <GlobeSection></GlobeSection>
     <div className="grid grid-cols-2">
