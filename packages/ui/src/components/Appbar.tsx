@@ -1,6 +1,5 @@
 
 import { Button } from "./button";
-// import logo  from "../../images/logo.png";
 
 interface AppbarProps {
     user?: {
