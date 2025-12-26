@@ -1,3 +1,4 @@
+
 import { getServerSession } from "next-auth";
 import { redirect } from 'next/navigation'
 import { authOptions } from "./lib/auth";
@@ -6,8 +7,6 @@ import GlobeSection from "../components/FeatureSectionTwo";
 import { LampSection } from "../components/LampSection";
 import { Footer } from "../components/Footer";
 import { AppbarClient } from "../components/AppbarClient";
-
-
 
 export default async function Page() {
   
