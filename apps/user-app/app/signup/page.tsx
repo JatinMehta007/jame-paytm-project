@@ -1,5 +1,4 @@
 "use client";
-
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import {signupSchema} from "@repo/types/signupSchema";
@@ -72,26 +71,22 @@ export default function Signup(){
           <Spinner />
         </div>
       );
-
     }
+
     return (
-        <div className="shadow-input relative top-6   mx-auto w-full max-w-md rounded-none bg-white p-4 md:rounded-2xl md:p-8 dark:bg-black">
-      <h2 className="text-xl text-center font-bold text-neutral-800 dark:text-neutral-200">
-        Welcome to <span className="text-green-600 ">Jame</span>
+        <div className="shadow-input relative top-6  mx-auto w-full max-w-md rounded-non p-4 md:rounded-2xl md:p-8 bg-black">
+      <h2 className="text-xl text-center font-bold text-neutral-200">
+        Welcome to <span className="text-green-600 font-title ">Jame</span>
       </h2>
-      <p className="mt-2 max-w-sm text-sm text-neutral-600 dark:text-neutral-300">
-        Login to Jame if you can because we don&apos;t have a <span className="text-green-600">login</span> flow
-        yet
+      <p className="mt-2 max-w-sm text-base text-center text-neutral-300">
+      Already have an account? <a href="/login" className="text-green-600 font-black">Login</a>
       </p>
  
-      <form className="my-8" onSubmit={(e) => {
-        e.preventDefault();
-        handleSignup();
-      }}>
+      <div className="my-8">
         <div className="mb-4 flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2">
           <LabelInputContainer>
             <Label htmlFor="firstname">Name</Label>
-            <Input id="firstname" placeholder="Jatin" type="text" value={name} onChange={(e)=>{
+            <Input className="bg-zinc-800 text-white shadow-[0px_0px_1px_1px_#404040] focus-visible:ring-neutral-600"  id="firstname" placeholder="Jatin" type="text" value={name} onChange={(e)=>{
                 setName(e.target.value)
             }} />{validationErrors?.name && <p className="text-red-600">{validationErrors.name._errors[0]}</p>}
           </LabelInputContainer>
@@ -99,7 +94,7 @@ export default function Signup(){
         
         <LabelInputContainer className="mb-4">
           <Label htmlFor="email">Email Address</Label>
-          <Input id="email" placeholder="programmer@gmail.com" type="email" value={email} onChange={(e)=>{
+          <Input className="bg-zinc-800 text-white shadow-[0px_0px_1px_1px_#404040] focus-visible:ring-neutral-600"  id="email" placeholder="programmer@gmail.com" type="email" value={email} onChange={(e)=>{
             setEmail(e.target.value)    
           }} />{validationErrors?.email && <p className="text-red-600">{validationErrors.email._errors[0]}</p>}
         </LabelInputContainer>
@@ -107,6 +102,7 @@ export default function Signup(){
         <LabelInputContainer className="mb-8">
           <Label htmlFor="phoneNumber">Phone Number</Label>
           <Input
+          className="bg-zinc-800 text-white shadow-[0px_0px_1px_1px_#404040] focus-visible:ring-neutral-600" 
             id="phoneNumber"
             placeholder="88245XXXXX"
             type="tel"
@@ -119,7 +115,7 @@ export default function Signup(){
         </LabelInputContainer>
         <LabelInputContainer className="mb-4 relative">
           <Label htmlFor="password" >Password</Label>
-          <Input id="password" placeholder="••••••••" 
+          <Input className="bg-zinc-800 text-white shadow-[0px_0px_1px_1px_#404040] focus-visible:ring-neutral-600" id="password" placeholder="••••••••" 
               type={showPassword ? "text" : "password"} value={password} onChange={(e)=>{
             setPassword(e.target.value) 
           }}/>
@@ -135,39 +131,16 @@ export default function Signup(){
         </LabelInputContainer>
  
         <button
-          className="group/btn relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
+          className="group/btn relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] "
           type="submit"
+          onClick={handleSignup}
         >
           Sign up &rarr;
           <BottomGradient />
         </button>
  
         <div className="my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
- 
-        <div className="flex flex-col space-y-4">
-          <button
-            className="group/btn shadow-input relative flex h-10 w-full items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_#262626]"
-            type="button"
-          >
-            <IconBrandGithub className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
-            <span className="text-sm text-neutral-700 dark:text-neutral-300">
-              GitHub
-            </span>
-            <BottomGradient />
-          </button>
-          <button
-            className="group/btn shadow-input relative flex h-10 w-full items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_#262626]"
-            type="button"
-          >
-            <IconBrandGoogle className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
-            <span className="text-sm text-neutral-700 dark:text-neutral-300">
-              Google
-            </span>
-            <BottomGradient />
-          </button>
-
-        </div>
-      </form>
+      </div>
     </div>
       );
     }
