@@ -4,7 +4,7 @@ export const signupSchema = z.object({
     name : z
      .string()
      .min(2,{message : "Name is required"})
-     .max(100, {message : "Name must be in 100 chracters"}),
+     .max(100, {message : "Name must be within 100 characters"}),
 
      email : z
        .string()
@@ -15,10 +15,11 @@ export const signupSchema = z.object({
         .string()
         .nonempty({message : "Phone number is required"})
         .trim()
-        .regex(/^\d{10}$/, "Phone number must be in a 10 digits"),
+        .regex(/^\d{10}$/, "Phone number must be exactly 10 digits"),
     
     password : z
-        .string()    
+        .string()  
+        .nonempty({message : "Password is required"})  
         .min(4,{message : "Password must be at least 4 characters long"})
        
 })
