@@ -4,10 +4,6 @@ import { useState } from "react";
 import {signupSchema} from "@repo/types/signupSchema";
 import axios from "axios";
 import { cn } from "../../../../packages/ui/lib/utils";
-import {
-    IconBrandGithub,
-    IconBrandGoogle,
-  } from "@tabler/icons-react";
 import { Label } from "@repo/ui/label";
 import { Input }  from "@repo/ui/input";
 import {Spinner} from "@repo/ui/spinner";
@@ -74,11 +70,11 @@ export default function Signup(){
     }
 
     return (
-        <div className="shadow-input relative top-6  mx-auto w-full max-w-md rounded-non p-4 md:rounded-2xl md:p-8 bg-black">
-      <h2 className="text-xl text-center font-bold text-neutral-200">
+        <div className="shadow-input relative top-6 mx-auto w-full max-w-md rounded-none md:rounded-2xl p-4 md:p-8 bg-black px-4 md:px-8 border-8 border-green-600 ring-8 ring-blue-600/80 ring-inset">
+      <h2 className="text-lg md:text-xl text-center font-bold text-neutral-200">
         Welcome to <span className="text-green-600 font-title ">Jame</span>
       </h2>
-      <p className="mt-2 max-w-sm text-base text-center text-neutral-300">
+      <p className="mt-2 max-w-sm text-sm md:text-base text-center text-neutral-300">
       Already have an account? <a href="/login" className="text-green-600 font-black">Login</a>
       </p>
  
@@ -122,7 +118,7 @@ export default function Signup(){
           
           <span
            onClick={() => setShowPassword((prev) => !prev)}
-             className="absolute right-3 top-[36px] -translate-y-1/2 cursor-pointer text-gray-500"
+             className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-gray-500"
             >
              {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
             </span>

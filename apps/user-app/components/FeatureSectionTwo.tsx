@@ -5,22 +5,22 @@ import { Highlight } from "@repo/ui/highlight";
 
 export default function GlobeSection() {
   return (
-    <div className="     ">
-         <div className="relative z-10 flex flex-col items-center mt-20">
-    <img src="./globe.png" alt="globe"  className=" h-[600px] object-contain w-auto drop-shadow-[0_80px_40px_rgba(0,0,0,0.5)] animate-bounce "/>
-       <div className="mt-40">
+    <div className="overflow-x-hidden">
+         <div className="relative z-10 flex flex-col items-center mt-10 md:mt-20 px-4">
+    <img src="./globe.png" alt="globe"  className="h-[300px] md:h-[400px] lg:h-[600px] object-contain w-auto drop-shadow-[0_80px_40px_rgba(0,0,0,0.5)] animate-bounce "/>
+       <div className="mt-10 md:mt-20 lg:mt-40">
       
       {/* <Lamp */}
        </div>
        <CardStackDemo>
           <CardStack items={CARDS} />
         </CardStackDemo>
-       <div className="h-[500px] w-[1200px] rounded-3xl top-56  -z-10 bg-blue-800 absolute ">
-       <span className="text-2xl  text-center block text-blue-100 opacity-30 mt-40">🚀 Coming Soon</span>
-       <span className="p-10 text-center block text-blue-100 opacity-50">
+       <div className="h-[300px] md:h-[400px] lg:h-[500px] w-[90%] md:w-[80%] lg:w-[1200px] max-w-[1200px] rounded-3xl top-28 md:top-40 lg:top-56  -z-10 bg-blue-800 absolute px-4">
+       <span className="text-lg md:text-xl lg:text-2xl text-center block text-blue-100 opacity-30 mt-10 md:mt-20 lg:mt-40">🚀 Coming Soon</span>
+       <span className="p-4 md:p-6 lg:p-10 text-center block text-blue-100 opacity-50 text-sm md:text-base lg:text-8xl">
        Send & Spend Money Worldwide
        </span>
-       <span className="text-3xl  text-center block text-blue-100 opacity-50">Fast, secure international payments with one global card.</span>
+       <span className="text-lg md:text-2xl lg:text-3xl text-center block text-blue-100 opacity-50 px-4">Fast, secure international payments with one global card.</span>
 
        </div>
       </div>

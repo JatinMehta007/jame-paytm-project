@@ -22,12 +22,12 @@ export default async function (){
 
    const transactions = await getP2PTransactions();
 
-     return <div className=" flex pl-28">
-      <div className="text-4xl mb-8 font-bold">
+     return <div className="flex flex-col md:flex-row md:pl-0 lg:pl-28 px-4 md:px-0">
+      <div className="text-2xl md:text-4xl mb-4 md:mb-8 font-bold">
         <SendCard/>   
         
       </div>
-      <div className="pt-[202px]  pl-10 ">
+      <div className="pt-4 md:pt-[202px] md:pl-10 w-full md:w-auto">
       <P2PTransactions transactions={transactions} />
       
       </div>

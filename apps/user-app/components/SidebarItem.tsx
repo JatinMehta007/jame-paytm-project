@@ -2,7 +2,7 @@
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 
-export const SidebarItem = ({ href, title, icon }: { href: string; title: string; icon: React.ReactNode }) => {
+export const SidebarItem = ({ href, title, icon, onNavigate }: { href: string; title: string; icon: React.ReactNode; onNavigate?: () => void }) => {
     const router = useRouter();
     const pathname = usePathname()
     const selected = pathname === href
@@ -11,6 +11,7 @@ export const SidebarItem = ({ href, title, icon }: { href: string; title: string
 
     <div className={`flex ${selected ? "text-[#6a51a6]" : "text-slate-500"} cursor-pointer  p-2 pl-8`} onClick={() => {
         router.push(href);
+        onNavigate?.();
     }}>
         <div className="pr-2">
             {icon}

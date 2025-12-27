@@ -1,23 +1,81 @@
+"use client";
+import { AppbarClient } from "../../components/AppbarClient";
 import { SidebarItem } from "../../components/SidebarItem";
+import { useState } from "react";
 
 export default function Layout({
   children,
 }: {
   children: React.ReactNode;
 }): JSX.Element {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
   return (
-    <div className="flex">
-        <div className="w-72 border-r border-slate-300 min-h-screen mr-4 pt-28">
+    <>
+    <AppbarClient></AppbarClient>
+    <div className="flex flex-col md:flex-row">
+
+        {/* Mobile menu button */}
+        <div className="md:hidden fixed top-4 left-4 z-50">
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="p-2 rounded-md bg-black text-white border border-slate-300"
+            aria-label="Toggle menu"
+            >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              >
+              {isMobileMenuOpen ? (
+                <path d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+        </div>
+
+        {/* Sidebar - hidden on mobile, shown on desktop */}
+        <div className={`
+          fixed md:static
+          top-0 left-0
+          w-72 h-full md:h-auto
+          border-r border-slate-300
+          min-h-screen md:min-h-0
+          mr-0 md:mr-4
+          pt-20 md:pt-28
+          bg-white md:bg-transparent
+          z-40
+          transform transition-transform duration-300 ease-in-out
+          ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
+          `}>
             <div>
-                <SidebarItem href={"/dashboard"} icon={<HomeIcon />} title="Home" />
-                <SidebarItem href={"/transfer"} icon={<TransferIcon />} title="Transfer" />
-                <SidebarItem href={"/transactions"} icon={<TransactionsIcon />} title="Transactions" />
-                <SidebarItem href={"/p2p"} icon={<P2PTransferIcon />} title="P2P Transfer" />
-                
+                <SidebarItem href={"/dashboard"} icon={<HomeIcon />} title="Home" onNavigate={() => setIsMobileMenuOpen(false)} />
+                <SidebarItem href={"/transfer"} icon={<TransferIcon />} title="Transfer" onNavigate={() => setIsMobileMenuOpen(false)} />
+                <SidebarItem href={"/transactions"} icon={<TransactionsIcon />} title="Transactions" onNavigate={() => setIsMobileMenuOpen(false)} />
+                <SidebarItem href={"/p2p"} icon={<P2PTransferIcon />} title="P2P Transfer" onNavigate={() => setIsMobileMenuOpen(false)} />
             </div>
         </div>
+
+        {/* Overlay for mobile menu */}
+        {isMobileMenuOpen && (
+          <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+          />
+        )}
+
+        {/* Main content */}
+        <div className="flex-1 w-full md:w-auto pt-16 md:pt-0 px-4 md:px-0">
             {children}
+        </div>
     </div>
+        </>
   );
 }
 

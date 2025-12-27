@@ -68,15 +68,15 @@ export default function Login(){
      }
 
     return (
-      <div className="flex justify-center  w-screen h-screen text-white items-center ">
-        <div className="h-96 w-[500px] bg-black rounded-lg">
-          <div className="text-center text-lg font-black my-5">
+      <div className="flex justify-center w-screen min-h-screen text-white items-center px-4 py-8 ">
+        <div className="w-full max-w-md bg-black rounded-lg shadow-lg border-8 border-green-600 ring-8 ring-blue-600/80 ring-inset">
+          <div className="text-center text-lg md:text-xl font-black my-5 px-4">
             Welcome to <span className="text-green-600 font-title">Jame</span> 
           </div>
-          <div className="text-center">
+          <div className="text-center px-4">
 Create an Account? <a href="/signup" className="text-green-600 font-black">Signup</a>
           </div>
-          <div className="p-10 relative">
+          <div className="p-6 md:p-10 relative">
           <LabelInputContainer className="mb-4">
             <Label htmlFor="password">PhoneNumber</Label>
             <Input 

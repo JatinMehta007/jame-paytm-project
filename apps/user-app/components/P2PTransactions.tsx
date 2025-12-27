@@ -17,7 +17,7 @@ export const P2PTransactions=({
     }
 
     return <Card title="Recent Transactions">
-            <div className="w-96 h-[230px] overflow-auto space-y-4  pr-3  ">
+            <div className="w-full md:w-96 h-[230px] overflow-auto space-y-4 pr-3">
             {transactions.map(t => <div className="flex justify-between  border-b pb-2 ">
                 <div>
                     <div className="text-base pt-1">

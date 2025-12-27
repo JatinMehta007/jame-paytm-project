@@ -9,6 +9,11 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Wallet",
   description: "Simple wallet app",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+  },
 };
 
 export default function RootLayout({
@@ -20,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <Providers>
         <body className={inter.className}>
-          <div className="min-w-screen min-h-screen bg-[#ebe6e6]">
+          <div className="w-full min-h-screen bg-[#ebe6e6]">
             {children}
             <Toaster position="top-center" />
           </div>

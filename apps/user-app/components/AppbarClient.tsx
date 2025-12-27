@@ -15,7 +15,7 @@ export function AppbarClient() {
       onSignin={() => router.push("/signup")}
       onSignout={async () => {
         await signOut({ redirect: false });
-        router.push("/signup");
+        router.push("/");
       }}
     />
    </div>

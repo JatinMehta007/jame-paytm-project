@@ -19,7 +19,7 @@ export default function RotatingCard() {
     
     <div 
       ref={cardRef} 
-      className="w-[250px] h-[400px] border-2  border-green-300 bg-blue-300 p-6 rounded-2xl shadow-2xl flex flex-col justify-between"
+      className="w-[200px] h-[320px] md:w-[250px] md:h-[400px] border-2 border-green-300 bg-blue-300 p-4 md:p-6 rounded-2xl shadow-2xl flex flex-col justify-between"
       style={{ 
         transformStyle: "preserve-3d",
         background: "linear-gradient(135deg, #93c5fd 0%, #3b82f6 100%)" 
