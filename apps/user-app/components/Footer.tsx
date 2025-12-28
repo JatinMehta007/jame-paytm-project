@@ -23,6 +23,9 @@ export function Footer(){
             </a>
           </div>
           </div>
+          <div className="text-green-600  leading-none text-[36vw]   text-center">
+            Jame.
+          </div>
       </footer>
     </>
       )
